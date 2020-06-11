@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Login from './pages/login/Login'
+import AUForm from './pages/form/AddUpdate'
+import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
+import {useSelector, useDispatch} from 'react-redux'
+import {loggedout} from './action'
+
 
 function App() {
+
+  const signIn = useSelector(state => state);
+  const dispatch = useDispatch();
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>APMI PRODUCT CENTRAL</h1>
+
+      <button onClick={()=> dispatch(loggedout())}>Logged Out</button>
+      
+      <hr />
+  {signIn ? <AUForm />: <Login />}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
