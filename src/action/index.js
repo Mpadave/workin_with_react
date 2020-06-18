@@ -10,3 +10,13 @@ export const loggedin =() => {
     }
 }
 
+
+export const addItem = (listState) => {
+    //console.log(listState)
+    return {
+        type:'ADD_ITEM',
+        payload:listState
+        
+    }
+}
+

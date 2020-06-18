@@ -1,24 +1,31 @@
 import React from 'react'
-import Login from './pages/login/Login'
+import Login from './pages/login'
 import AUForm from './pages/form/AddUpdate'
-import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
+import ViewList from './pages/present/Viewmode'
 import {useSelector, useDispatch} from 'react-redux'
-import {loggedout} from './action'
+import {loggedout,loggedin} from './action'
+import './css/main.scss'
 
 
 function App() {
 
-  const signIn = useSelector(state => state);
+  const signIn = useSelector(state => state.Loggedin);
   const dispatch = useDispatch();
  
   return (
-    <div>
-      <h1>APMI PRODUCT CENTRAL</h1>
-
-      <button onClick={()=> dispatch(loggedout())}>Logged Out</button>
-      
-      <hr />
-  {signIn ? <AUForm />: <Login />}
+    <div className="main-container">
+      <div className="header">
+        <div className="logo">Apmi jewels</div>
+<div className = "logout">{signIn ? <span onClick={()=> dispatch(loggedout())}>Logout</span> : 'login'}</div>
+      </div>
+      <div className="page_view_container">
+      <div className="live_view">
+          <ViewList />
+      </div>
+      <div className="cms_view">
+      <AUForm />
+      </div>
+      </div>
     </div>
   )
 }

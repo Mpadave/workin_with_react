@@ -1,0 +1,115 @@
+@import './variable';
+@import './pages/login';
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;500;700&display=swap');
+
+*{font-family: 'Mukta Malar', sans-serif;}
+
+.header{
+        
+background: $white;
+padding: 10px;
+display: flex;
+align-items: center;
+align-content: center;
+border-bottom: 3px solid royalblue;
+;
+
+    .logo{
+        color:$grey;
+        font-size: 1.2rem;
+        width: 100%-5%;
+        text-transform: uppercase;
+        padding-left: 20px;
+
+    }
+    .logout{
+        cursor: pointer;
+        transition: all .40s ease-in-out;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        font-weight: bold;
+
+        &:hover{
+            color: red;
+        }
+    }
+
+}
+
+
+.page_view_container{
+
+    
+    display: flex;
+    box-sizing: border-box;
+
+    .live_view{
+        width: 75%;
+        background-color: $white;
+        height: 100vh;
+        border-right:2px solid $silverColor;
+        padding:20px
+    }
+
+    .cms_view{
+        width: 25%;
+        background-color: lavender;
+        height: 100vh;
+        
+    }
+
+}
+
+.login_container{
+
+    width: 100%-50%;
+    background: dodgerblue;
+    padding:10px
+
+}
+
+.FormTemplate{
+
+    .formTitle{
+        font-size: 1.2rem;
+        padding:10px; 
+        text-align: left;
+        
+    }
+
+    .formGroup {
+        padding:5px 20px;
+        margin-bottom: 2px;
+    }
+
+    label{
+        font-size: 12px;
+        text-transform: capitalize;
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    input,select{
+        width: 100%;
+        border-radius: 4px;
+        border:none;
+        font-size:1rem;
+        color:#333;
+        box-sizing: border-box;
+        padding:3px 10px
+    }
+
+    .button_container {
+        padding:5px 20px;
+        margin-bottom: 2px;
+        display: flex;
+        flex-grow: 1;
+        text-align: center;
+        align-content: center;
+
+        
+    }
+    
+}
